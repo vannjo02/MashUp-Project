@@ -163,7 +163,7 @@ function search(lat, lng, placeSearch){
    var search = data.features[x].properties.label;
 
    if (placeSearch){
-	  getNews(data.features[0].properties.label);
+	  getNews(document.getElementById('pac-input').value);
   } else{
 	  getNews(search);
   }
