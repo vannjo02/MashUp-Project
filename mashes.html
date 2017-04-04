@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MashUp Project</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+  <link rel="stylesheet" href="../css/mashes.css">
+
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-container">
+      <p>MapsNews<p>
+  </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="starter-template">
+      <div class="dataentry">
+        <form class='form-inline' name='expensesform'>
+          <div class='form-group'>
+          <h1>Welcome to MapsNews!</h1>
+          <p>This is a mashup of Google Maps, MapZen and BingsMap</p>
+          <p>Simply click on the map or enter in a city, town or country and get back news related to that area</p>
+          <label for="item">City</label>
+          <input id="pac-input" class="controls" type="text" placeholder="Search for city,town or country">
+          <div class="text-center Reset">
+            <button type="button" class="btn btn-primary" onclick="reset_zoom()">Reset Zoom</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+      <div class="row">
+        <div class="col-xs-6">
+          <h1>Map</h1>
+          <div id="map"></div>
+        </div>
+        <div class="col-xs-6">
+          <h1>News Headlines</h1>
+          <div id="news"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">Mid-Term MashUp</p>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../js/mashes.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeCRNGNQuDm8MPeXG61GmAoCK6azwRiNU&&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>
