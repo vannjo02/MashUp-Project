@@ -150,7 +150,17 @@ function search(lat, lng, placeSearch){
    //type: ['restaurant']
  };
 
- service.search(request, function(results){
+ if (placeSearch){
+	 getNews(document.getElementById('pac-input').value);
+	 service.search(request, function(results){
+   console.log(results);
+   var lt = results[0].geometry.location.lat();
+   var lg = results[0].geometry.location.lng();
+   for( i = 0; i < results.length; i++) {
+     createMarker(results[i]);
+  }
+ })
+ } else{service.search(request, function(results){
    console.log(results);
    var lt = results[0].geometry.location.lat();
    var lg = results[0].geometry.location.lng();
@@ -161,17 +171,15 @@ function search(lat, lng, placeSearch){
    var x = Math.floor((Math.random() * 6));
    console.log(data.features[x]);
    var search = data.features[x].properties.label;
-
-   if (placeSearch){
-	  getNews(document.getElementById('pac-input').value);
-  } else{
-	  getNews(search);
-  }
+	getNews(search);
+  
 });
   
  
   
- })
+ }) }
+ 
+ 
 }
 
 
