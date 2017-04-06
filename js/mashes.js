@@ -59,8 +59,7 @@ function autocomplete(){
 
 
 function createMarker(place) {
-console.log("testhere");
-  console.log(place);
+  
   var infowindow = new google.maps.InfoWindow();
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
