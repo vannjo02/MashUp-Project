@@ -59,6 +59,8 @@ function autocomplete(){
 
 
 function createMarker(place) {
+console.log("testhere");
+  console.log(place);
   var infowindow = new google.maps.InfoWindow();
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
@@ -66,20 +68,32 @@ function createMarker(place) {
     position: place.geometry.location
   });
   markersArray.push(marker);
-
-  google.maps.event.addListener(marker, 'click', function() {
+  var self = this;
   infowindow.setContent(place.name);
-  infowindow.open(map, this);
+  this.infowindowArray.push(infowindow);
+  google.maps.event.addListener(marker, 'click', function() {
+  	self.closeInfoWindows(infowindowArray);
+  
+  	infowindow.open(map, this);
 });
 }
 
+function closeInfoWindows(listofWindows) {
+	for (var i = 0; i<listofWindows.length; i++) {
+		listofWindows[i].close();
+	}
+}
+
 var markersArray = [];
+var infowindowArray = [];
 function clearOverlays() {
     for (var i = 0; i < markersArray.length; i++ ) {
       markersArray[i].setMap(null);
     }
     markersArray.length = 0;
   }
+
+
 
 function initMarker() {
   //var placeLoc = place.geometry.location;
